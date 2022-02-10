@@ -1,24 +1,19 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { search } from 'superagent'
 
 import { fetchCityWeather } from '../actions'
 
-function App () {
-  const weather = useSelector(state => state.weather)
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchCityWeather())
-  }, [])
+import Search from './Search'
+import Weather from './Weather'
 
+function App () {
   return (
     <>
       <div className='app'>
         <h1>WEATHER!</h1>
-        <ul>
-          {fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
+        <Search />
+        <Weather />
       </div>
     </>
   )

@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { fetchCityWeather } from '../actions'
 
 export default function SearchBox (props) {
   // const callback = props.handleSearchButton
   const [formData, setFormData] = useState({
-    movie: ''
+    city: ''
   })
+
+  const dispatch = useDispatch()
+  // useEffect(() => {
+  //   dispatch(fetchCityWeather(e.target.value))
+  // }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -16,8 +24,7 @@ export default function SearchBox (props) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    callback(formData.movie)
-    return null
+    dispatch(fetchCityWeather(formData.city))
   }
 
   return (
@@ -25,8 +32,8 @@ export default function SearchBox (props) {
       <form onSubmit={handleSubmit}>
         <input name='city'
           className='form-control'
-          value={formData.movie}
-          placeholder='Type to search...'
+          value={formData.city}
+          placeholder='Search by city name...'
           onChange={handleChange}
         />
         <button>Search</button>

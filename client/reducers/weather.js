@@ -1,11 +1,11 @@
-import { SET_FRUITS } from '../actions'
+import { SET_WEATHER } from '../actions'
 
-const initialState = []
+const initialState = { location: { name: '' }, current: { condition: { text: '' } } }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_FRUITS:
-      return action.fruits
+    case SET_WEATHER:
+      return action.weather
     default:
       return state
   }

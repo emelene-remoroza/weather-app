@@ -1,12 +1,11 @@
 import request from 'superagent'
 
-const rootUrl = '/api/v1'
+const rootUrl = '/api/v1/weather'
 
-//Doublecheck names from Krissy's route
-
-export function getWeather () {
-  return request.get(rootUrl + '/weather')
+export function getWeather (city) {
+  console.log(city)
+  return request.get(`${rootUrl}/${city}`)
     .then(res => {
-      return res.body //check later
+      return res.body // check later
     })
 }
