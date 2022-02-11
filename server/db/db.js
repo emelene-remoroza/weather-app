@@ -1,16 +1,16 @@
-const environment = process.env.NODE_ENV || 'development'
-const config = require('./knexfile')[environment]
-const connection = require('knex')(config)
+const connection = require('./connection')
 
-function getActivities (db = connection) {
-  return db('activities').select()
+function getActivities (type, db = connection) {
+  return db('activities')
+    .select()
+    .where('type', type)
 }
 
 function getClothes (db = connection) {
   return db('clothes').select()
 }
 
-
 module.exports = {
-  getActivities
+  getActivities,
+  getClothes
 }

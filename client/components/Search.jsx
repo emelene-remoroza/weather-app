@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { fetchCityForecast, fetchCityWeather } from '../actions'
 
-export default function SearchBox (props) {
+export default function SearchBox () {
   const [formData, setFormData] = useState({
     city: ''
   })

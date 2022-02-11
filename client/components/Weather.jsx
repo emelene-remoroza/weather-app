@@ -1,8 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
+import Activities from './Activities'
+
 export default function Weather () {
   const weather = useSelector(state => state.weather)
+  console.log(weather.current.condition.code)
 
   return (
     <>
@@ -15,6 +18,9 @@ export default function Weather () {
         <h4>{weather.current.condition.text}</h4>
         <p><em>Wind {weather.current.wind_kph}kph {weather.current.wind_dir}</em></p>
         <p>Humidity {weather.current.humidity}%</p>
+      </div>
+      <div>
+        {/* <Activities code={weather.current.condition.code} /> */}
       </div>
     </>
   )
