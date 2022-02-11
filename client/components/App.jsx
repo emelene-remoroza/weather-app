@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { search } from 'superagent'
-
-import { fetchCityWeather } from '../actions'
+import React from 'react'
 
 import Search from './Search'
 import Weather from './Weather'
+import Forecast from './Forecast'
 
 function App () {
   return (
@@ -14,6 +11,7 @@ function App () {
         <h1>WEATHER!</h1>
         <Search />
         <Weather />
+        <Forecast />
       </div>
     </>
   )
