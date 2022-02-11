@@ -8,19 +8,20 @@ export default function Forecast () {
 
   return (
     <>
-      <p>Forecast for the next 2 days</p>
-      <div>
-        <p>{day1.date}</p>
-        <p>{day1.day.avgtemp_c} °C</p>
-        <img src={day1.day.condition.icon} />
-        <p>{day1.day.condition.text}</p>
-      </div>
-      <div>
-        <p>Forecast</p>
-        <p>{day2.date}</p>
-        <p>{day2.day.avgtemp_c} °C</p>
-        <img src={day2.day.condition.icon} />
-        <p>{day2.day.condition.text}</p>
+      <div className='forecast'>
+        <h3>Forecast for the next 2 days</h3>
+        <div className='day1'>
+          <p>{day1.date}</p>
+          <p>{day1.day.avgtemp_c} °C</p>
+          <img src={day1.day.condition.icon} />
+          <p>{day1.day.condition.text}</p>
+        </div>
+        <div className='day2'>
+          <p>{day2.date}</p>
+          <p>{day2.day.avgtemp_c} °C</p>
+          <img src={day2.day.condition.icon} />
+          <p>{day2.day.condition.text}</p>
+        </div>
       </div>
     </>
   )
