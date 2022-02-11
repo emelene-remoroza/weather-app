@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { fetchCityWeather } from '../actions'
+import { fetchCityForecast, fetchCityWeather } from '../actions'
 
 export default function SearchBox (props) {
   // const callback = props.handleSearchButton
@@ -25,6 +25,7 @@ export default function SearchBox (props) {
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(fetchCityWeather(formData.city))
+    dispatch(fetchCityForecast(formData.city))
   }
 
   return (

@@ -16,9 +16,10 @@ router.get('/:city', (req, res) => {
     })
 })
 
-// hard coded to Auckland
-router.get('/', (req, res) => {
-  return request.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY}&q=Auckland&aqi=no`)
+// forecast api
+router.get('/:city/forecast', (req, res) => {
+  const city = req.params.city
+  return request.get(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_API_KEY}&q=${city}&days=3&aqi=no&alerts=no`)
     .then(response => {
       return res.json(response.body)
     })
