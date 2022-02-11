@@ -3,12 +3,13 @@ import React from 'react'
 import Search from './Search'
 import Weather from './Weather'
 import Forecast from './Forecast'
+import Header from './Header'
 
 function App () {
   return (
     <>
+      <Header />
       <div className='app'>
-        <h1>WEATHER!</h1>
         <Search />
         <Weather />
         <Forecast />

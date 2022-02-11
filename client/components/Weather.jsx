@@ -8,13 +8,13 @@ export default function Weather () {
     <>
       <div className='weather'>
         <h1>{weather.location.name}</h1>
+        <h4>{weather.location.country}</h4>
         <p>{weather.location.localtime}</p>
         <h2>{weather.current.temp_c} °C</h2>
         <img src={weather.current.condition.icon} />
-        <p>{weather.current.condition.text}</p>
-        <p>Wind {weather.current.wind_kph} kph</p>
-        <p>Wind {weather.current.wind_dir} dir</p>
-        <p>{weather.current.humidity}</p>
+        <h4>{weather.current.condition.text}</h4>
+        <p><em>Wind {weather.current.wind_kph}kph {weather.current.wind_dir}</em></p>
+        <p>Humidity {weather.current.humidity}%</p>
       </div>
     </>
   )
