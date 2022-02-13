@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import Activities from './Activities'
+import Clothes from './Clothes'
 import ErrMessage from './ErrMessage'
 import WaitIndicator from './WaitIndicator'
 
@@ -25,6 +26,9 @@ export default function Weather () {
         <Activities code={weather.current.condition.code}>
           <WaitIndicator />
         </Activities>
+        <Clothes temp={weather.current.temp_c}>
+          <WaitIndicator />
+        </Clothes>
       </div>
     </>
   )
