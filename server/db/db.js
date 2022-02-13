@@ -6,8 +6,9 @@ function getActivities (type, db = connection) {
     .where('type', type)
 }
 
-function getClothes (db = connection) {
+function getClothes (condition, db = connection) {
   return db('clothes').select()
+    .where('condition', condition)
 }
 
 module.exports = {
