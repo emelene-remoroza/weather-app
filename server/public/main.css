@@ -13,7 +13,7 @@ body {
 
 header {
   color: white;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 h1 {
@@ -22,7 +22,7 @@ h1 {
 }
 
 h3 {
-  padding-top: 30px;
+  padding-top: 20px;
   margin-bottom: 0;
   text-transform: uppercase;
 }
@@ -68,10 +68,25 @@ button:hover {
   box-shadow: none;
 }
 
-.activities {
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.activities, .clothes {
+  flex-basis: 40%;
   background-color: lightblue;
-  margin-bottom: 20px;
+  margin-bottom: 1.5em;
   border-radius: 20px;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .activities, .clothes {
+    flex-basis: 100%;
+  }
 }
 
 .activities ul {

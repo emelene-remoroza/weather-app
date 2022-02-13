@@ -21,7 +21,7 @@ export default function Weather () {
         <p><em>Wind {weather.current.wind_kph}kph {weather.current.wind_dir}</em></p>
         <p>Humidity {weather.current.humidity}%</p>
       </div>
-      <div>
+      <div className='suggestions'>
         <ErrMessage />
         <Activities code={weather.current.condition.code}>
           <WaitIndicator />

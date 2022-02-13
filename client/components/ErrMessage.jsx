@@ -5,6 +5,6 @@ export default function ErrMessage () {
   const errMessage = useSelector(state => state.errMessage)
 
   return (
-    <div>{errMessage}</div>
+    <>{errMessage}</>
   )
 }
