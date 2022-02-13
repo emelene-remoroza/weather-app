@@ -2,10 +2,11 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import Activities from './Activities'
+import ErrMessage from './ErrMessage'
+import WaitIndicator from './WaitIndicator'
 
 export default function Weather () {
   const weather = useSelector(state => state.weather)
-  console.log(weather.current.condition.code)
 
   return (
     <>
@@ -20,7 +21,10 @@ export default function Weather () {
         <p>Humidity {weather.current.humidity}%</p>
       </div>
       <div>
-        {/* <Activities code={weather.current.condition.code} /> */}
+        <ErrMessage />
+        <Activities code={weather.current.condition.code}>
+          <WaitIndicator />
+        </Activities>
       </div>
     </>
   )
