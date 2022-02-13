@@ -25,7 +25,7 @@ export default function SearchBox () {
   }
 
   return (
-    <div className='col col-sm-3'>
+    <div className='city-form'>
       <form onSubmit={handleSubmit}>
         <input name='city'
           className='form-control'

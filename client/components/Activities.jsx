@@ -6,7 +6,6 @@ import { fetchActivities } from '../actions/dbActions'
 export default function Activities (props) {
   const dispatch = useDispatch()
   const activities = useSelector(state => state.activities)
-  console.log('Activities:', activities)
 
   useEffect(() => {
     dispatch(fetchActivities(props.code))
