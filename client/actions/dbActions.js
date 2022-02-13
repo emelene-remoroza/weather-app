@@ -24,51 +24,24 @@ export function setError (errMessage) {
   }
 }
 
-// export function fetchActivities (code) {
-//   console.log('dbActions ', code)
-//   return (dispatch, getState) => {
-//     dispatch(setActsPending())
-//     return getActivities('indoor')
-//       .then(activities => {
-//         dispatch(setActivities(activities))
-//         return null
-//       })
-//       .catch(err => {
-//         dispatch(setError(err.message))
-//       })
-//   }
-// }
-
 export function fetchActivities (code) {
   return (dispatch, getState) => {
     dispatch(setActsPending())
-    if (code < 1010) {
-      return getActivities('outdoor')
-        .then(activities => {
-          dispatch(setActivities(activities))
-          return null
-        })
-        .catch(err => {
-          dispatch(setError(err.message))
-        })
-    } else if (code > 1010 && code < 1192) {
-      return getActivities('indoor')
-        .then(activities => {
-          dispatch(setActivities(activities))
-          return null
-        })
-        .catch(err => {
-          dispatch(setError(err.message))
-        })
-    } else if (code > 1191 && code < 1283) {
-      return getActivities('shelter')
-        .then(activities => {
-          dispatch(setActivities(activities))
-          return null
-        })
-        .catch(err => {
-          dispatch(setError(err.message))
-        })
-    } return null
+    const actType = getActivityType(code)
+    return getActivities(actType)
+      .then(activities => {
+        dispatch(setActivities(activities))
+        return null
+      })
+      .catch(err => {
+        dispatch(setError(err.message))
+      })
   }
+}
+
+function getActivityType (code) {
+  if (code < 1010) { return 'outdoor' }
+  if (code > 1010 && code < 1192) { return 'indoor' }
+  if (code > 1191 && code < 1283) { return 'shelter' }
+  return null
 }
