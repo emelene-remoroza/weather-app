@@ -1,29 +1,20 @@
-# Fullstack boilerplate
+# Weather App
+Made as part of Enspiral Dev Academy's bootcamp - Group Project
 
-## Getting Started
+Weather app created using [https://www.weatherapi.com/](weatheraAPI).
 
-### From the Github UI
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
+# API Key
+You can add your own API key by signing up at [https://www.weatherapi.com/signup.aspx](weatheraAPI). Create a file in the root folder called '.env' and set your API key by following the example in .env-sample.
 
-### From the command line
+## Setup
+
+To experience this repo:
 
 ```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
+clone this repo
+npm install
+npm run knex migrate:latest
+npm run knex seed:run
+npm run dev
 ```
-
 You can find the server running on [http://localhost:3000](http://localhost:3000).
-
-## Details
-
-This repo includes:
-
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Jest and testing library
-* configuration for server-side debugging in VS Code
-* a single client-side test (`client/components/App.test.js`)
