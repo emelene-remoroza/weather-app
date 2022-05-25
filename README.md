@@ -3,8 +3,8 @@ Made as part of Enspiral Dev Academy's bootcamp - Group Project
 
 Weather app created using [weatherAPI](https://www.weatherapi.com/).
 
-# API Key
-You can add your own API key by signing up at [weatherAPI](https://www.weatherapi.com/signup.aspx). Create a file in the root folder called '.env' and set your API key by following the example in .env-sample.
+## API Key
+You can add your own API key by signing up at [weatherAPI](https://www.weatherapi.com/signup.aspx). Create a file in the root folder called '.env' and set your API key by following the example in .env.sample.
 
 ## Setup
 
